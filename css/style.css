@@ -110,6 +110,11 @@ header {
     height: 49px;
 }
 
+.search-bar form {
+    display: flex;
+    flex: 1;
+}
+
 .icon-box {
     background-color: rgb(234, 232, 232);
     width: 40px;
