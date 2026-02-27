@@ -639,6 +639,7 @@ footer {
 
     .info {
         align-items: baseline;
+        margin: 0;
     }
 
     .accommodation-cards {
