@@ -34,7 +34,6 @@ footer {
     height: 80px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     padding-left: 0;
     padding-right: 0;
 }
@@ -46,7 +45,6 @@ header {
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
 }
 
 .logo img {
@@ -61,6 +59,7 @@ header {
     height: 35px;
     gap: 20px;
     padding: 0 33px;
+    margin: 0;
 
 }
 
