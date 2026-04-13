@@ -1,3 +1,25 @@
+const token = localStorage.getItem("token");
+
+if (token) {
+    //**Affiche le bandeau noir */
+    const banner = document.getElementById("edition-banner");
+    if (banner) banner.style.display = "flex";
+    //**Affiche le bouton modifier */
+    const modifyBtn = document.getElementById("modify-projects");
+    if (modifyBtn) modifyBtn.style.display = "inline-block";
+}
+
+const loginLink = document.querySelector('nav ul li:nth-child(3)');
+
+if(localStorage.getItem("token")) {
+    loginLink.textContent = "logout";
+    loginLink.style.cursor = "pointer";
+    loginLink.addEventListener("click", () => {
+        localStorage.removeItem("token");
+        window.location.reload();
+    });
+}
+
 //**maGallery */
 let allWorks = [];
 const maGallery = document.querySelector(".gallery")
@@ -58,4 +80,49 @@ fetch("http://localhost:5678/api/categories")
                 displayWorks(filtered);
             })
         })    
+});
+
+// --- GESTION DE LA MODALE ---
+
+const modalContainer = document.getElementById("modal-container");
+const modalGallery = document.querySelector(".modal-gallery");
+
+// Fonction pour ouvrir la modale
+const openModal = function (e) {
+    e.preventDefault();
+    modalContainer.style.display = "flex";
+    modalContainer.removeAttribute('aria-hidden');
+    modalContainer.setAttribute('aria-modal', 'true');
+    
+    // On remplit la galerie de la modale dès l'ouverture
+    displayWorksInModal()  ;
+};
+
+// Fonction pour fermer la modale
+const closeModal = function (e) {
+    if (modalContainer.style.display === "none") return;
+    e.preventDefault();
+    modalContainer.style.display = "none";
+    modalContainer.setAttribute('aria-hidden', 'true');
+    modalContainer.removeAttribute('aria-modal');
+};
+
+// Ecouteur d'événement sur le bouton "modifier"
+// (On s'assure que le bouton existe avant d'ajouter l'écouteur)
+const modifyBtn = document.getElementById("modify-projects");
+if (modifyBtn) {
+    modifyBtn.addEventListener("click", openModal);
+}
+
+// Ecouteurs pour fermer la modale
+const closeBtn = document.querySelector(".js-modal-close");
+if (closeBtn) {
+    closeBtn.addEventListener("click", closeModal);
+}
+
+// Fermer en cliquant sur le fond sombre
+modalContainer.addEventListener("click", (e) => {
+    if (e.target === modalContainer) {
+        closeModal(e);
+    }
 });
