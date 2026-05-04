@@ -29,7 +29,7 @@
 			<ul>
 				<li>projets</li>
 				<li>contact</li>
-				<li><a href="login.html" class="li-style">login</a></li>
+				<li>login</li>
 				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
 		</nav>
@@ -51,10 +51,9 @@
 			</article>
 		</section>
 		<section id="portfolio">
-			<div style="display: flex; justify-content: center; align-items: baseline; gap: 31px;">
+			<div class="portfolio-header">
 				<h2>Mes Projets</h2>
-				<a href="#modal-container" id="modify-projects"
-					style="display: none; text-decoration: none; color: black; font-size: 14px;">
+				<a href="#modal-container" id="modify-projects" class="hidden btn-modify">
 					<i class="fa-regular fa-pen-to-square"></i> modifier
 				</a>
 			</div>
@@ -130,7 +129,7 @@
 		</nav>
 	</footer>
 
-	<aside id="modal-container" class="modal" aria-hidden="true" role="dialog" style="display:none;">
+	<aside id="modal-container" class="modal hidden" aria-hidden="true" role="dialog">
 		<div class="modal-wrapper">
 			<button class="js-modal-close"><i class="fa-solid fa-xmark"></i></button>
 

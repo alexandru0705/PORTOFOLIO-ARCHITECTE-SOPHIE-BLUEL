@@ -113,8 +113,7 @@ body {
 
 /* Admin Banner */
 .edition-banner {
-	display: none;
-	/* Hidden by default, shown via JS */
+	display: flex;
 	background-color: #000;
 	color: #fff;
 	text-align: center;
@@ -642,3 +641,30 @@ footer nav ul {
 	top: 0;
 	left: 0;
 }
+
+/* 1. Utility Classes */
+.hidden { display: none !important; }
+
+/* 2. Portfolio Header Layout (Replaces inline style) */
+.portfolio-header {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 31px;
+}
+
+/* 3. Modify Button Styles (Replaces inline style) */
+.btn-modify {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+/* 4. Upload Preview State (Replaces JS style manipulation) */
+.upload-container.has-preview i, 
+.upload-container.has-preview .upload-btn-label {
+    display: none;
+}
+
+/* 5. Login Link Cursor (Replaces JS style manipulation) */
+.cursor-pointer { cursor: pointer; }

@@ -27,6 +27,6 @@ loginForm.addEventListener("submit", async (event) => {
             errorMessage.style.display = 'block';
         }
     } catch (error) {
-        console.error('Login error:', error);
+        errorMessage.classList.remove("hidden"); 
     }
 });
