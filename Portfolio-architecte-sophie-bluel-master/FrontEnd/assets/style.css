@@ -108,7 +108,7 @@ section {
 }
 
 body {
-	line-height: 1;
+	line-height: 1.5;
 }
 
 /* Admin Banner */
@@ -131,7 +131,8 @@ body {
 }
 
 .edition-banner i {
-    font-size: 16px; /* Adjust icon size to match text */
+	font-size: 16px;
+	/* Adjust icon size to match text */
 }
 
 ol,
@@ -170,7 +171,7 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0 100px 0;
 }
 
 section {
@@ -210,6 +211,7 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
+	cursor: pointer;
 }
 
 li:hover {
@@ -224,20 +226,26 @@ li:hover {
 #introduction {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	margin-bottom: 130px;
+	gap: 70px;
 }
 
 #introduction figure {
-	flex: 1
+	margin: 0;;
 }
 
 #introduction img {
 	display: block;
 	margin: auto;
-	width: 80%;
+	width: 470px;
+	height: 355px;
 }
 
 #introduction article {
-	flex: 1
+	max-width: 400px;
+	height: auto;
+	flex: 1;
 }
 
 #introduction h2 {
@@ -251,14 +259,15 @@ li:hover {
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
+	margin-bottom: 70px;
 }
 
 .gallery {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
+	grid-column-gap: 30px;
+	grid-row-gap: 40px;
 }
 
 .gallery img {
@@ -271,7 +280,7 @@ li:hover {
 	display: flex;
 	justify-content: center;
 	gap: 10px;
-	margin: 50px 0;
+	margin: 50px;
 }
 
 .btn-filtres {
@@ -320,6 +329,7 @@ li:hover {
 }
 
 #contact input {
+	margin-bottom: 20px;
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
@@ -332,6 +342,7 @@ li:hover {
 
 #contact textarea {
 	border: none;
+	margin-bottom: 20px;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
@@ -432,15 +443,17 @@ footer nav ul {
 
 /* Fenêtre blanche */
 .modal-wrapper {
-	background-color: #fff;
-	width: 600px;
-	max-width: 90%;
-	height: auto;
-	padding: 40px 60px;
-	border-radius: 15px;
-	position: relative;
-	display: flex;
-	flex-direction: column;
+    box-sizing: border-box; /* Forces padding to stay inside the 630px width */
+    width: 630px;           /* Standard Figma width for this project */
+    min-height: 670px;      /* Prevents the modal from shrinking during view swaps */
+    max-height: 90vh;       /* Prevents the modal from going off-screen */
+    overflow-y: auto;       /* Adds a scrollbar only if the content is too long */
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 60px 105px;    /* Figma-perfect horizontal padding */
+    display: flex;
+    flex-direction: column;
+    position: relative;
 	align-items: center;
 }
 
@@ -469,7 +482,7 @@ footer nav ul {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	grid-column-gap: 10px;
-	grid-row-gap: 15px;
+	grid-row-gap: 25px;
 	width: 100%;
 	max-width: 500px;
 	margin: 0 auto 30px auto;
@@ -495,6 +508,9 @@ footer nav ul {
 	padding: 10px 50px;
 	border-radius: 60px;
 	cursor: pointer;
+	width: 237px;        /* Precise Figma width */
+    height: 36px;         /* Remove manual padding to honor fixed width */
+    font-size: 14px;
 }
 
 .modal-figure {
@@ -617,8 +633,9 @@ footer nav ul {
 	/* The dark green from Figma */
 	color: white;
 	border: none;
-	padding: 15px;
-	width: 200px;
+	padding: 0;
+	height: 36px;
+	width: 237px;
 	border-radius: 30px;
 	font-weight: bold;
 	cursor: pointer;
@@ -643,28 +660,32 @@ footer nav ul {
 }
 
 /* 1. Utility Classes */
-.hidden { display: none !important; }
+.hidden {
+	display: none !important;
+}
 
 /* 2. Portfolio Header Layout (Replaces inline style) */
 .portfolio-header {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 31px;
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	gap: 31px;
 }
 
 /* 3. Modify Button Styles (Replaces inline style) */
 .btn-modify {
-    text-decoration: none;
-    color: black;
-    font-size: 14px;
+	text-decoration: none;
+	color: black;
+	font-size: 14px;
 }
 
 /* 4. Upload Preview State (Replaces JS style manipulation) */
-.upload-container.has-preview i, 
+.upload-container.has-preview i,
 .upload-container.has-preview .upload-btn-label {
-    display: none;
+	display: none;
 }
 
 /* 5. Login Link Cursor (Replaces JS style manipulation) */
-.cursor-pointer { cursor: pointer; }
+.cursor-pointer {
+	cursor: pointer;
+}

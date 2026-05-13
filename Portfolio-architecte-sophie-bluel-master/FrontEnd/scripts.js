@@ -83,6 +83,7 @@ function updateAuthUI() {
             // Remove any existing listeners by cloning (avoids duplicates)
             const newLink = DOM.loginLink.cloneNode(true);
             DOM.loginLink.parentNode.replaceChild(newLink, DOM.loginLink);
+                                                // new.     old.  
 
             newLink.addEventListener("click", () => {
                 localStorage.removeItem("token");
@@ -364,6 +365,7 @@ function createUploadForm() {
         DOM.galleryView.classList.remove("hidden"); // Show gallery again
     });
 
+    // --- Title for the form ---
     const title = document.createElement("h3");
     title.textContent = "Ajout photo";
 
@@ -389,9 +391,8 @@ function createUploadForm() {
     fileInput.type = "file";
     fileInput.id = "work-image";
     fileInput.name = "image";
-    fileInput.accept = "image/*";
+    fileInput.accept = "image/jpg image/png";
     fileInput.style.display = "none"; // Hidden; container click triggers it
-
     // Clicking the container opens the file chooser
     uploadContainer.addEventListener("click", () => fileInput.click());
 
